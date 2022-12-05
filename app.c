@@ -82,9 +82,17 @@ int removerSilo() {
   for (i = 0; i < qtdSilos; i++) {
     // Verificando se o silo existe
     if (strcmp(silos[i].localizacao, localizacao) == 0) {
-      // Removendo silo
-      silos[i] = silos[qtdSilos - 1];
-      qtdSilos--;
+      
+      // Remover o silo
+      for (int j = i; j < qtdSilos; j++) {
+        silos[j] = silos[j + 1]; // Copiando o próximo silo para o atual
+        // exemplo : 
+        // 4 silos, remover o silo 2
+        // silos[2] = silos[3]
+        // silos[3] = silos[4]
+        // removido!
+      }
+
       // Realocar memoria
       silos = (Silo *)realloc(silos, qtdSilos * sizeof(Silo));
       // Retornando sucesso
