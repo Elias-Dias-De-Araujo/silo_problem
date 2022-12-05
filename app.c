@@ -88,8 +88,8 @@ int removerSilo() {
         silos[j] = silos[j + 1]; // Copiando o próximo silo para o atual
         // exemplo : 
         // 4 silos, remover o silo 2
-        // silos[2] = silos[3]
-        // silos[3] = silos[4]
+        // silos[1] = silos[2]
+        // silos[3] = silos[2]
         // removido!
       }
 
